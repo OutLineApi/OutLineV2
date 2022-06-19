@@ -2,6 +2,7 @@ var { app, BrowserWindow, Notification, ipcMain, nativeTheme, Menu, MenuItem } =
 var express = require("express");
 var server = express();
 var path = require("path");
+const logs = require("../utils/Logger");
 
 // class cause cleaner
 class electron {
@@ -13,10 +14,11 @@ class electron {
         this.nativeTheme = nativeTheme;
         this.Menu = Menu;
         this.MenuItem = MenuItem;
+        this.logger = new logs();
 
         var createWin = () => {
             // Logger gonna be here at some point
-            console.log("Electron is running.");
+            this.logger.Log.INFO("Electron is running.");
             const win = new this.BrowserWindow({
                 width: 1020,
                 height: 500,
@@ -85,9 +87,3 @@ class electron {
 
 var elec;
 elec = new electron();
-
-module.exports = (server, path) => {
-    server.get("/", (req, res) => {
-        res.sendFile(path.join(__dirname + "/frontend/login.html"));
-    });
-}

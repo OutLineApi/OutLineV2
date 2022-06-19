@@ -1,0 +1,5 @@
+{
+    "PORT": 8080,
+    "EXTERNAL_PORT": 4040,
+    "DB": null
+}
