@@ -1,12 +1,10 @@
 const request = require("request");
 const express = require("express");
-const logs = require("../utils/Logger");
 const Settings = require("../Settings.json");
 
 class Start {
     constructor() {
         this.app = express();
-        this.logger = new logs();
         this.settings = Settings;
     }
 
