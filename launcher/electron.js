@@ -2,7 +2,7 @@ var { app, BrowserWindow, Notification, ipcMain, nativeTheme, Menu, MenuItem } =
 var express = require("express");
 var server = express();
 var path = require("path");
-const logs = require("../utils/Logger");
+const outlineLogs = require("outline-logs");
 
 // class cause cleaner
 class electron {
@@ -14,7 +14,7 @@ class electron {
         this.nativeTheme = nativeTheme;
         this.Menu = Menu;
         this.MenuItem = MenuItem;
-        this.logger = new logs();
+        this.logger = new outlineLogs();
 
         var createWin = () => {
             // Logger gonna be here at some point
