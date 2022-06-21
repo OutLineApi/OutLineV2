@@ -24,6 +24,7 @@ class index {
     ReqModules() {
         require("./launcher/electron");
         require("./launcher/Start");
+        require("./utils/BetaAccess");
     }
 }
 
